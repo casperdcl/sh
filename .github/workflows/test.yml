@@ -28,6 +28,23 @@ jobs:
       run: diff <(echo -n) <(gofmt -d .)
       if: matrix.platform == 'ubuntu-latest'
 
+  test-action:
+    strategy:
+      matrix:
+        go-version: [1.12.x, 1.13.x]
+    name: Test GitHub Action
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v1
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - uses: ./
+      with:
+        shfmt_args: "-l -d -i 2 -ci -w"
+
   test-linux-alpine:
     runs-on: ubuntu-latest
     steps:
