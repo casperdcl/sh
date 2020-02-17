@@ -1,0 +1,15 @@
+name: shfmt
+description: "formats shell programs"
+
+inputs:
+  shfmt_args:
+    required: false
+    description: "flags for shfmt"
+    default: "-l -d -i 2 -ci -w"
+  skip_install:
+    required: false
+    description: "whether to skip installing"
+
+runs:
+  using: node12
+  main: ./index.js
