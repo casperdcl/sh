@@ -5,7 +5,7 @@ inputs:
   shfmt_args:
     required: false
     description: "flags for shfmt"
-    default: "-l -d -i 2 -ci -w"
+    default: "-l -d -i 2 -ci -w ."
   skip_install:
     required: false
     description: "whether to skip installing"

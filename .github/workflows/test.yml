@@ -43,7 +43,7 @@ jobs:
       uses: actions/checkout@v2
     - uses: ./
       with:
-        shfmt_args: "-l -d -i 2 -ci -w"
+        shfmt_args: "-l -i 2 -ci -w ."
 
   test-linux-alpine:
     runs-on: ubuntu-latest
